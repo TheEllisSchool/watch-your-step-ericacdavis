@@ -1,4 +1,5 @@
+import javax.swing.JButton;
 
-public class TerrainButton {
+public class TerrainButton extends JButton{
 
 }
