@@ -1,6 +1,7 @@
 import java.awt.Color;
 import java.awt.Dimension;
 
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 
 public class TerrainButton extends JButton{
@@ -11,6 +12,7 @@ private int col = 0;
 private int nextToHoles = 0;
 private boolean hole = false;
 private boolean revealed = false;
+private ImageIcon bomb = new ImageIcon("http://pngimg.com/uploads/bomb/bomb_PNG16.png");
 
 
 public TerrainButton (int r, int c) {
@@ -49,9 +51,10 @@ public boolean isNextToHoles() {
 
 public void reveal(boolean reveal) {
 	revealed = reveal;
-	if (revealed = true) {
+	if (revealed == true) {
 		if (hasHole()) {
-			setBackground(Color.black);
+			System.out.println("yes");
+			setIcon(bomb);
 		}
 		if (! hasHole()) {
 			setBackground(Color.cyan);
@@ -72,5 +75,6 @@ public void reset() {
 	nextToHoles = 0;
 	setText("");
 	setBackground(null);
+	setIcon(null);
 }
 }

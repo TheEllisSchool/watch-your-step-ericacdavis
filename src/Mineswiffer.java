@@ -91,23 +91,24 @@ private void promptForNewGame(String message) {
 	}
 }
 private void showHoles() {
-	for(int r = 0; r< GRIDSIZE; r++) {
-		for(int c = 0; c < GRIDSIZE; c++) {
-			if(terrain[r][c].hasHole()) {
-				terrain[r][c].reveal(true);
-			}
+for (int r =0; r< GRIDSIZE; r++) {
+	for(int c= 0; c< GRIDSIZE; c++) {
+		if(terrain[r][c].hasHole()) {
+			terrain[r][c].reveal(true);
 		}
 	}
+}	
 }
 private void newGame() {
 	for (int r = 0; r< GRIDSIZE; r++) {
 		for (int c = 0; c < GRIDSIZE; c++) {
 			terrain[r][c].reset();
 		}
+	}
 		setHoles();
 		totalRevealed= 0;
 	}
-}
+
 private void check(int row, int col) {
 	if(row > -1 && row < GRIDSIZE && col > -1 && col < GRIDSIZE 
 		&&! terrain[row][col].hasHole()
